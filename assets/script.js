@@ -1,13 +1,22 @@
+$(function() {
+  $(".saveBtn").click(function (event) {
+    var parentId = $(this).parent().attr("id");
+    var getHour = parseInt(parentId.slice(5));
+    var targetDay = day.js().format('dddd-MMMM-Do' + getHour);
+    var targetHour = day.js(targetDay);
+    var today = day.js().format('dddd-MMMM-Do HH');
+    var difference = targetHour.diff(today, 'hour');
+    
+    var assignment = document.querySelector('#' + parentId + 'textarea').ariaValueMax;
+    localStorage.setItem(parent, assignment);
+
+});
+}
+
+)
 //current date using day.js
 var currentDay = dayjs().format("dddd, MMMM Do")
 $('#currentDate').text(time);
-
-
-
-
-
-
-
 
 /*user story 
 as an employee with a busy schedule 
