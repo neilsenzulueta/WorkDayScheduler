@@ -1,15 +1,15 @@
 $(function() {
   $(".saveBtn").click(function (event) {
     var parentId = $(this).parent().attr("id");
-    var assignment = $("#" + parentId + " textarea").val(); // Change to .val() to get the textarea value
+    var assignment = $("#" + parentId + " textarea").val();
     localStorage.setItem(parentId, assignment);
   });
   $(".time-block").each(function () {
     var parentId = $(this).attr("id");
     var getHour = parseInt(parentId.slice(5));
-    var targetDay = dayjs().format("dddd-MMMM-Do" + getHour);
+    var targetDay = dayjs().format("dddd, MMMM D, YYYY" + getHour);
     var targetHour = dayjs(targetDay);
-    var today = dayjs().format("dddd-MMMM-Do HH");
+    var today = dayjs().format("dddd, MMMM D, YYYY HH");
     var difference = targetHour.diff(today, "hour");
     console.log(difference)
 
@@ -27,11 +27,11 @@ $(function() {
       var assignment = localStorage.getItem(parentId);
 
       if (assignment !== null) {
-        $("#" + parentId + " textarea").val(assignment); // Change to .val() to set the textarea value
+        $("#" + parentId + " textarea").val(assignment);
       }
   });
 
-  var time = dayjs().format("dddd, MMMM Do");
+  var time = dayjs().format("dddd, MMMM D, YYYY");
   $("#currentDay").text(time);
 
 });
