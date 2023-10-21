@@ -7,16 +7,14 @@ $(function() {
   $(".time-block").each(function () {
     var parentId = $(this).attr("id");
     var getHour = parseInt(parentId.slice(5));
-    var targetDay = dayjs().format("dddd, MMMM D, YYYY" + getHour);
+    var targetDay = dayjs().format("YYYY-MM-DD") + getHour;
     var targetHour = dayjs(targetDay);
-    var today = dayjs().format("dddd, MMMM D, YYYY HH");
+    var today = dayjs().format("YYYY-MM-DD H");
     var difference = targetHour.diff(today, "hour");
-    console.log(difference)
 
     if (difference === 0) {
       $(this).addClass("present");
-    }
-    if (difference < 0) {
+    } else if (difference < 0) {
       $(this).addClass("past");
     } else {
       $(this).addClass("future")
