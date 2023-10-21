@@ -1,8 +1,9 @@
+/*Font family and size for body*/
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
-
+/*Styling for textarea*/
 textarea {
   background: transparent;
   border: none;
@@ -11,40 +12,40 @@ textarea {
   border-left: 1px solid black;
   padding: 10px;
 }
-
+/*Styling for description*/
 .description {
   white-space: pre-wrap;
 }
-
+/*Styling for time-block*/
 .time-block {
   border-radius: 15px;
 }
-
+/*Styling for row*/
 .row {
   border-top: 1px solid white;
 }
-
+/*Styling for hour*/
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
 }
-
+/*Stying for past*/
 .past {
   background-color: #d3d3d3;
   color: white;
 }
-
+/*Styling for present*/
 .present {
   background-color: #ff6961;
   color: white;
 }
-
+/*Styling for future*/
 .future {
   background-color: #77dd77;
   color: white;
 }
-
+/*Styling for the save button*/
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -52,7 +53,7 @@ textarea {
   background-color: #06aed5;
   color: white;
 }
-
+/*Styling for the hover effect*/
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
